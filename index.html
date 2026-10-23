@@ -1,41 +1,29 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="pt-BR">
 <head>
-<link href="./images/icon_192.png" rel="apple-touch-icon"/>
-<link as="image" href="./images/icon.svg" imagesizes="23px" rel="preload"/>
 <meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1, viewport-fit=cover" name="viewport"/>
+<title>BiblioVerse — A Biblioteca da Racionalidade — Catálogo pesquisável de pensamento crítico, racionalidade e evidências</title>
+<meta content="Catálogo pesquisável de pensamento crítico, racionalidade e práticas baseadas em evidências: livros, guias de falácias e vieses, organizações, pessoas, divulgação científica e filosófica." name="description"/>
+<link href="https://thinking.biblioverse.org/" rel="canonical"/>
 <meta content="#0e1117" name="theme-color"/>
 <meta content="yes" name="mobile-web-app-capable"/>
 <meta content="yes" name="apple-mobile-web-app-capable"/>
-<title>BiblioVerse — A Biblioteca da Racionalidade — Catálogo pesquisável de pensamento crítico, racionalidade e evidências</title>
+<!-- App icons -->
 <link href="images/icon.svg" rel="icon" type="image/svg+xml"/>
 <link href="images/icon_192.png" rel="icon" sizes="192x192" type="image/png"/>
 <link href="images/icon_512.png" rel="icon" sizes="512x512" type="image/png"/>
 <link href="images/icon_192.png" rel="apple-touch-icon"/>
 <link href="manifest.webmanifest" rel="manifest"/>
-<meta content="Catálogo pesquisável de pensamento crítico, racionalidade e práticas baseadas em evidências: livros, guias de falácias e vieses, organizações, pessoas, divulgação científica e filosófica." name="description"/>
 <link href="https://fonts.googleapis.com" rel="preconnect"/>
 <link crossorigin="anonymous" href="https://fonts.gstatic.com" rel="preconnect"/>
-<link as="style" href="https://fonts.googleapis.com/css2?family=TASA+Explorer:wght@400;700&display=swap" onload="this.rel='stylesheet'" rel="preload"/><noscript><link href="https://fonts.googleapis.com/css2?family=TASA+Explorer:wght@400;700&display=swap" rel="stylesheet"/></noscript>
+<link as="style" href="https://fonts.googleapis.com/css2?family=TASA+Explorer:wght@400;700&amp;display=swap" onload="this.rel='stylesheet'" rel="preload"/><noscript><link href="https://fonts.googleapis.com/css2?family=TASA+Explorer:wght@400;700&amp;display=swap" rel="stylesheet"/></noscript>
 <link as="style" href="styles.css" onload="this.rel='stylesheet'" rel="preload"/><noscript><link href="styles.css" rel="stylesheet"/></noscript>
+<script src="https://biblioverse.org/superbar.js" defer></script>
 </head>
 <body>
-<!-- Super-bar -->
-<nav aria-label="Bibliotecas" class="superbar">
-<div class="superbar-toggle"><span class="superbar-title i18n-superbar-title">BiblioVerse - A Biblioteca de Tudo</span> <span aria-hidden="true" class="icon-burger"><i></i><i></i><i></i></span><span aria-hidden="true" class="icon-close">✕</span></div>
-<ul class="superbar-list">
-<li class="superbar-item"><a data-key="design" href="https://design.biblioverse.org">Design</a></li>
-<li class="superbar-item"><a data-key="philosophy" href="https://philosophy.biblioverse.org">Filosofia</a></li>
-<li class="superbar-item"><a data-key="games" href="https://games.biblioverse.org">Games</a></li>
-<li class="superbar-item"><a data-key="language" href="https://language.biblioverse.org">Idiomas</a></li>
-<li class="superbar-item"><a data-key="ai" href="https://ai.biblioverse.org">IA</a></li>
-<li class="superbar-item"><a data-key="music" href="https://music.biblioverse.org">Música</a></li>
-<li class="superbar-item"><a data-key="coding" href="https://code.biblioverse.org">Programação</a></li>
-<li class="superbar-item active"><a data-key="thinking" href="https://thinking.biblioverse.org">Racionalidade</a></li>
-<li class="superbar-item"><a data-key="social" href="https://social.biblioverse.org">Redes Sociais</a></li>
-</ul>
-</nav>
+<!-- BiblioVerse Superbar -->
+<nav id="bvbar" class="bvbar" data-current="thinking" aria-label="BiblioVerse" style="position:fixed;top:0;left:0;right:0;height:44px;z-index:9000;background:linear-gradient(90deg,#4f7cff,#7a5cff)"><a href="https://biblioverse.org" style="color:#fff;line-height:44px;padding:0 14px;font-weight:700;text-decoration:none;font-family:sans-serif">BiblioVerse</a></nav>
 <aside aria-label="Categorias" class="sidepush" id="sidepush"><div class="sidepush-top"><button aria-label="Expandir menu" class="side-toggle" id="menuToggle" title="Expandir menu" type="button">▶</button></div><nav class="sidepush-scroll" id="sideScroll"><ul class="sidepush-menu" id="sideMenu"></ul></nav></aside><div class="push-wrap" id="pushWrap"><header class="site-header">
 <div class="header-inner container">
 <div class="brand-wrap">
@@ -48,13 +36,9 @@
 </a>
 <span class="beta-badge">BETA</span>
 </h1>
-<span class="byline">
-<span class="i18n-by">Idealizada por</span>
-<a class="bylink" href="https://jvlio.biblioverse.org" rel="noopener noreferrer" target="_blank">Julio Cesar Prava</a>
-</span>
 </div>
 <div class="controls">
-<input autofocus="" class="mono" id="search" placeholder="Buscar por nome" type="search"/>
+<input class="mono" id="search" placeholder="Buscar por nome" type="search"/>
 <select class="mono" id="categoryFilter" title="Filtrar por categoria"></select>
 <div class="control-group">
 <button aria-label="Alternar tema" class="toggle" id="themeToggle" type="button">☀️</button>
@@ -74,7 +58,7 @@
       <span id="count">0</span>
 <span class="i18n-items">itens</span>
 <span class="sep">|</span>
-<span class="i18n-lastupdate">Última atualização: Setembro/2026</span>
+<span class="i18n-lastupdate">Última atualização: Outubro/2026</span>
 </div>
 <p class="footer-lead">
 <span class="i18n-footer-lead-pre">O projeto</span>
@@ -84,7 +68,7 @@
 <p class="footer-note i18n-bookmarkShare">Salve esse projeto nos seus favoritos e compartilhe!</p>
 <p class="footer-nav"><span class="i18n-footernav">Acesse as bibliotecas de outros temas úteis no <strong class="bverse-strong">BiblioVerse</strong>.</span></p>
 <div class="footer-actions">
-<a class="btn linkedin mono" href="https://jvlio.biblioverse.org" rel="noopener noreferrer" target="_blank">LinkedIn</a>
+<a class="btn linkedin mono" href="https://www.linkedin.com/company/biblioverse.org" rel="noopener noreferrer" target="_blank">LinkedIn</a>
 <button aria-label="Favoritar" class="btn star mono" id="favBtn" type="button">⭐</button>
 <button class="btn share mono" id="shareBtn" type="button"><span class="i18n-share">Compartilhar</span></button>
 <a class="btn bverse mono" href="https://biblioverse.org" rel="noopener noreferrer" target="_blank">BiblioVerse</a>
@@ -138,7 +122,7 @@
     "category": "Referências e guias",
     "subcategory": "Enciclopédias e referências",
     "name": "The Skeptic's Dictionary",
-    "url": "http://www.skepdic.com/",
+    "url": "https://www.skepdic.com/",
     "description": "",
     "tags": [],
     "featured": false,
@@ -148,7 +132,7 @@
     "category": "Referências e guias",
     "subcategory": "Enciclopédias e referências",
     "name": "Scholarpedia",
-    "url": "http://www.scholarpedia.org/",
+    "url": "https://www.scholarpedia.org/",
     "description": "",
     "tags": [],
     "featured": false,
@@ -528,7 +512,7 @@
     "category": "Pensamento crítico",
     "subcategory": "Pessoas",
     "name": "Hugo Mercier",
-    "url": "https://scholar.google.com/citations?view_op=search_authors&mauthors=Hugo%20Mercier",
+    "url": "https://scholar.google.com/scholar?q=%22Hugo+Mercier%22",
     "description": "",
     "tags": [],
     "featured": false,
@@ -548,7 +532,7 @@
     "category": "Pensamento crítico",
     "subcategory": "Pessoas",
     "name": "Richard Paul",
-    "url": "https://scholar.google.com/citations?view_op=search_authors&mauthors=Richard%20Paul",
+    "url": "https://scholar.google.com/scholar?q=%22Richard+Paul%22",
     "description": "",
     "tags": [],
     "featured": false,
@@ -1798,7 +1782,7 @@
     "category": "Educação Baseada em Evidências",
     "subcategory": "Pessoas",
     "name": "Paul A. Kirschner",
-    "url": "https://scholar.google.com/citations?view_op=search_authors&mauthors=Paul%20A.%20Kirschner",
+    "url": "https://scholar.google.com/scholar?q=%22Paul+A.+Kirschner%22",
     "description": "",
     "tags": [],
     "featured": false,
@@ -1818,7 +1802,7 @@
     "category": "Educação Baseada em Evidências",
     "subcategory": "Pessoas",
     "name": "Pooja Agarwal",
-    "url": "https://scholar.google.com/citations?view_op=search_authors&mauthors=Pooja%20Agarwal",
+    "url": "https://scholar.google.com/scholar?q=%22Pooja+Agarwal%22",
     "description": "",
     "tags": [],
     "featured": false,
@@ -1898,7 +1882,7 @@
     "category": "Política Baseada em Evidências",
     "subcategory": "Organizações",
     "name": "Coalition for Evidence-Based Policy",
-    "url": "http://coalition4evidence.org/",
+    "url": "https://coalition4evidence.org/",
     "description": "",
     "tags": [],
     "featured": false,
@@ -1928,7 +1912,7 @@
     "category": "Política Baseada em Evidências",
     "subcategory": "Organizações",
     "name": "The Pew Charitable Trusts",
-    "url": "https://www.pewtrusts.org/",
+    "url": "https://www.pew.org/en/",
     "description": "",
     "tags": [],
     "featured": false,
@@ -2018,7 +2002,7 @@
     "category": "Política Baseada em Evidências",
     "subcategory": "Pessoas",
     "name": "Justin Parkhurst",
-    "url": "https://scholar.google.com/citations?view_op=search_authors&mauthors=Justin%20Parkhurst",
+    "url": "https://scholar.google.com/scholar?q=%22Justin+Parkhurst%22",
     "description": "",
     "tags": [],
     "featured": false,
@@ -2038,7 +2022,7 @@
     "category": "Política Baseada em Evidências",
     "subcategory": "Pessoas",
     "name": "Sandra M. Nutley",
-    "url": "https://scholar.google.com/citations?view_op=search_authors&mauthors=Sandra%20M.%20Nutley",
+    "url": "https://scholar.google.com/scholar?q=%22Sandra+M.+Nutley%22",
     "description": "",
     "tags": [],
     "featured": false,
@@ -2048,7 +2032,7 @@
     "category": "Política Baseada em Evidências",
     "subcategory": "Pessoas",
     "name": "Huw Davies",
-    "url": "https://scholar.google.com/citations?view_op=search_authors&mauthors=Huw%20Davies",
+    "url": "https://scholar.google.com/scholar?q=%22Huw+Davies%22",
     "description": "",
     "tags": [],
     "featured": false,
@@ -2058,7 +2042,7 @@
     "category": "Política Baseada em Evidências",
     "subcategory": "Pessoas",
     "name": "Kai Spiekermann",
-    "url": "https://scholar.google.com/citations?view_op=search_authors&mauthors=Kai%20Spiekermann",
+    "url": "https://scholar.google.com/scholar?q=%22Kai+Spiekermann%22",
     "description": "",
     "tags": [],
     "featured": false,
@@ -2108,7 +2092,7 @@
     "category": "Política Baseada em Evidências",
     "subcategory": "Pessoas",
     "name": "Naercio Menezes Filho",
-    "url": "https://scholar.google.com/citations?view_op=search_authors&mauthors=Naercio%20Menezes%20Filho",
+    "url": "https://scholar.google.com/scholar?q=%22Naercio+Menezes+Filho%22",
     "description": "",
     "tags": [],
     "featured": false,
@@ -2118,7 +2102,7 @@
     "category": "Política Baseada em Evidências",
     "subcategory": "Pessoas",
     "name": "Thomas Conti",
-    "url": "https://scholar.google.com/citations?view_op=search_authors&mauthors=Thomas%20Conti",
+    "url": "https://scholar.google.com/scholar?q=%22Thomas+Conti%22",
     "description": "",
     "tags": [],
     "featured": false,
@@ -2128,7 +2112,7 @@
     "category": "Política Baseada em Evidências",
     "subcategory": "Pessoas",
     "name": "Victor Rangel",
-    "url": "https://scholar.google.com/citations?view_op=search_authors&mauthors=Victor%20Rangel",
+    "url": "https://scholar.google.com/scholar?q=%22Victor+Rangel%22",
     "description": "",
     "tags": [],
     "featured": false,
@@ -2138,7 +2122,7 @@
     "category": "Política Baseada em Evidências",
     "subcategory": "Pessoas",
     "name": "Ana Luiza Pessanha",
-    "url": "https://scholar.google.com/citations?view_op=search_authors&mauthors=Ana%20Luiza%20Pessanha",
+    "url": "https://scholar.google.com/scholar?q=%22Ana+Luiza+Pessanha%22",
     "description": "",
     "tags": [],
     "featured": false,
@@ -2148,7 +2132,7 @@
     "category": "Política Baseada em Evidências",
     "subcategory": "Pessoas",
     "name": "Brian Head",
-    "url": "https://scholar.google.com/citations?view_op=search_authors&mauthors=Brian%20Head",
+    "url": "https://scholar.google.com/scholar?q=%22Brian+Head%22",
     "description": "",
     "tags": [],
     "featured": false,
@@ -2158,7 +2142,7 @@
     "category": "Política Baseada em Evidências",
     "subcategory": "Pessoas",
     "name": "Gary Banks",
-    "url": "https://scholar.google.com/citations?view_op=search_authors&mauthors=Gary%20Banks",
+    "url": "https://scholar.google.com/scholar?q=%22Gary+Banks%22",
     "description": "",
     "tags": [],
     "featured": false,
@@ -2368,7 +2352,7 @@
     "category": "Psicologia Baseada em Evidências",
     "subcategory": "Pessoas",
     "name": "Jan Leonardi",
-    "url": "https://scholar.google.com/citations?view_op=search_authors&mauthors=Jan%20Leonardi",
+    "url": "https://scholar.google.com/scholar?q=%22Jan+Leonardi%22",
     "description": "",
     "tags": [],
     "featured": false,
@@ -2378,7 +2362,7 @@
     "category": "Psicologia Baseada em Evidências",
     "subcategory": "Pessoas",
     "name": "Ramiro Figueiredo Catelan",
-    "url": "https://scholar.google.com/citations?view_op=search_authors&mauthors=Ramiro%20Figueiredo%20Catelan",
+    "url": "https://scholar.google.com/scholar?q=%22Ramiro+Figueiredo+Catelan%22",
     "description": "",
     "tags": [],
     "featured": false,
@@ -2388,7 +2372,7 @@
     "category": "Psicologia Baseada em Evidências",
     "subcategory": "Pessoas",
     "name": "Anelisa Vaz de Carvalho",
-    "url": "https://scholar.google.com/citations?view_op=search_authors&mauthors=Anelisa%20Vaz%20de%20Carvalho",
+    "url": "https://scholar.google.com/scholar?q=%22Anelisa+Vaz+de+Carvalho%22",
     "description": "",
     "tags": [],
     "featured": false,
@@ -2398,7 +2382,7 @@
     "category": "Psicologia Baseada em Evidências",
     "subcategory": "Pessoas",
     "name": "Bruno Figueiredo Damásio",
-    "url": "https://scholar.google.com/citations?view_op=search_authors&mauthors=Bruno%20Figueiredo%20Dam%C3%A1sio",
+    "url": "https://scholar.google.com/scholar?q=%22Bruno+Figueiredo+Dam%C3%A1sio%22",
     "description": "",
     "tags": [],
     "featured": false,
@@ -2408,7 +2392,7 @@
     "category": "Psicologia Baseada em Evidências",
     "subcategory": "Pessoas",
     "name": "Carmem Beatriz Neufeld",
-    "url": "https://scholar.google.com/citations?view_op=search_authors&mauthors=Carmem%20Beatriz%20Neufeld",
+    "url": "https://scholar.google.com/scholar?q=%22Carmem+Beatriz+Neufeld%22",
     "description": "",
     "tags": [],
     "featured": false,
@@ -2418,7 +2402,7 @@
     "category": "Psicologia Baseada em Evidências",
     "subcategory": "Pessoas",
     "name": "Tobias de Medeiros Chaves Ferreira",
-    "url": "https://scholar.google.com/citations?view_op=search_authors&mauthors=Tobias%20de%20Medeiros%20Chaves%20Ferreira",
+    "url": "https://scholar.google.com/scholar?q=%22Tobias+de+Medeiros+Chaves+Ferreira%22",
     "description": "",
     "tags": [],
     "featured": false,
@@ -2428,7 +2412,7 @@
     "category": "Psicologia Baseada em Evidências",
     "subcategory": "Pessoas",
     "name": "Fernanda Brunkow",
-    "url": "https://scholar.google.com/citations?view_op=search_authors&mauthors=Fernanda%20Brunkow",
+    "url": "https://scholar.google.com/scholar?q=%22Fernanda+Brunkow%22",
     "description": "",
     "tags": [],
     "featured": false,
@@ -2438,7 +2422,7 @@
     "category": "Psicologia Baseada em Evidências",
     "subcategory": "Pessoas",
     "name": "Fernanda Landeiro",
-    "url": "https://scholar.google.com/citations?view_op=search_authors&mauthors=Fernanda%20Landeiro",
+    "url": "https://scholar.google.com/scholar?q=%22Fernanda+Landeiro%22",
     "description": "",
     "tags": [],
     "featured": false,
@@ -2448,7 +2432,7 @@
     "category": "Psicologia Baseada em Evidências",
     "subcategory": "Pessoas",
     "name": "Filipe Luis Souza",
-    "url": "https://scholar.google.com/citations?view_op=search_authors&mauthors=Filipe%20Luis%20Souza",
+    "url": "https://scholar.google.com/scholar?q=%22Filipe+Luis+Souza%22",
     "description": "",
     "tags": [],
     "featured": false,
@@ -2458,7 +2442,7 @@
     "category": "Psicologia Baseada em Evidências",
     "subcategory": "Pessoas",
     "name": "Igor Eckert",
-    "url": "https://scholar.google.com/citations?view_op=search_authors&mauthors=Igor%20Eckert",
+    "url": "https://scholar.google.com/scholar?q=%22Igor+Eckert%22",
     "description": "",
     "tags": [],
     "featured": false,
@@ -2468,7 +2452,7 @@
     "category": "Psicologia Baseada em Evidências",
     "subcategory": "Pessoas",
     "name": "Loren Beiram",
-    "url": "https://scholar.google.com/citations?view_op=search_authors&mauthors=Loren%20Beiram",
+    "url": "https://scholar.google.com/scholar?q=%22Loren+Beiram%22",
     "description": "",
     "tags": [],
     "featured": false,
@@ -2478,7 +2462,7 @@
     "category": "Psicologia Baseada em Evidências",
     "subcategory": "Pessoas",
     "name": "Roberta Ekuni",
-    "url": "https://scholar.google.com/citations?view_op=search_authors&mauthors=Roberta%20Ekuni",
+    "url": "https://scholar.google.com/scholar?q=%22Roberta+Ekuni%22",
     "description": "",
     "tags": [],
     "featured": false,
@@ -2488,7 +2472,7 @@
     "category": "Psicologia Baseada em Evidências",
     "subcategory": "Pessoas",
     "name": "Tammy Marchiori",
-    "url": "https://scholar.google.com/citations?view_op=search_authors&mauthors=Tammy%20Marchiori",
+    "url": "https://scholar.google.com/scholar?q=%22Tammy+Marchiori%22",
     "description": "",
     "tags": [],
     "featured": false,
@@ -2498,7 +2482,7 @@
     "category": "Psicologia Baseada em Evidências",
     "subcategory": "Pessoas",
     "name": "Anna Keila Hecke Polak",
-    "url": "https://scholar.google.com/citations?view_op=search_authors&mauthors=Anna%20Keila%20Hecke%20Polak",
+    "url": "https://scholar.google.com/scholar?q=%22Anna+Keila+Hecke+Polak%22",
     "description": "",
     "tags": [],
     "featured": false,
@@ -2508,7 +2492,7 @@
     "category": "Psicologia Baseada em Evidências",
     "subcategory": "Pessoas",
     "name": "Bernardo Mattos",
-    "url": "https://scholar.google.com/citations?view_op=search_authors&mauthors=Bernardo%20Mattos",
+    "url": "https://scholar.google.com/scholar?q=%22Bernardo+Mattos%22",
     "description": "",
     "tags": [],
     "featured": false,
@@ -2518,7 +2502,7 @@
     "category": "Psicologia Baseada em Evidências",
     "subcategory": "Pessoas",
     "name": "Júlia Amaral",
-    "url": "https://scholar.google.com/citations?view_op=search_authors&mauthors=J%C3%BAlia%20Amaral",
+    "url": "https://scholar.google.com/scholar?q=%22J%C3%BAlia+Amaral%22",
     "description": "",
     "tags": [],
     "featured": false,
@@ -2528,7 +2512,7 @@
     "category": "Psicologia Baseada em Evidências",
     "subcategory": "Pessoas",
     "name": "Iane Almeida",
-    "url": "https://scholar.google.com/citations?view_op=search_authors&mauthors=Iane%20Almeida",
+    "url": "https://scholar.google.com/scholar?q=%22Iane+Almeida%22",
     "description": "",
     "tags": [],
     "featured": false,
@@ -2538,7 +2522,7 @@
     "category": "Psicologia Baseada em Evidências",
     "subcategory": "Pessoas",
     "name": "Henrique Freire",
-    "url": "https://scholar.google.com/citations?view_op=search_authors&mauthors=Henrique%20Freire",
+    "url": "https://scholar.google.com/scholar?q=%22Henrique+Freire%22",
     "description": "",
     "tags": [],
     "featured": false,
@@ -2548,7 +2532,7 @@
     "category": "Psicologia Baseada em Evidências",
     "subcategory": "Pessoas",
     "name": "Thiago Mácimo",
-    "url": "https://scholar.google.com/citations?view_op=search_authors&mauthors=Thiago%20M%C3%A1cimo",
+    "url": "https://scholar.google.com/scholar?q=%22Thiago+M%C3%A1cimo%22",
     "description": "",
     "tags": [],
     "featured": false,
@@ -2558,7 +2542,7 @@
     "category": "Psicologia Baseada em Evidências",
     "subcategory": "Pessoas",
     "name": "Jennifer Craco",
-    "url": "https://scholar.google.com/citations?view_op=search_authors&mauthors=Jennifer%20Craco",
+    "url": "https://scholar.google.com/scholar?q=%22Jennifer+Craco%22",
     "description": "",
     "tags": [],
     "featured": false,
@@ -2568,7 +2552,7 @@
     "category": "Psicologia Baseada em Evidências",
     "subcategory": "Pessoas",
     "name": "Letícia Duarte",
-    "url": "https://scholar.google.com/citations?view_op=search_authors&mauthors=Let%C3%ADcia%20Duarte",
+    "url": "https://scholar.google.com/scholar?q=%22Let%C3%ADcia+Duarte%22",
     "description": "",
     "tags": [],
     "featured": false,
@@ -2578,7 +2562,7 @@
     "category": "Psicologia Baseada em Evidências",
     "subcategory": "Pessoas",
     "name": "Tanise Chites da Costa",
-    "url": "https://scholar.google.com/citations?view_op=search_authors&mauthors=Tanise%20Chites%20da%20Costa",
+    "url": "https://scholar.google.com/scholar?q=%22Tanise+Chites+da+Costa%22",
     "description": "",
     "tags": [],
     "featured": false,
@@ -2588,7 +2572,7 @@
     "category": "Psicologia Baseada em Evidências",
     "subcategory": "Pessoas",
     "name": "Freya Bizarro",
-    "url": "https://scholar.google.com/citations?view_op=search_authors&mauthors=Freya%20Bizarro",
+    "url": "https://scholar.google.com/scholar?q=%22Freya+Bizarro%22",
     "description": "",
     "tags": [],
     "featured": false,
@@ -2598,7 +2582,7 @@
     "category": "Psicologia Baseada em Evidências",
     "subcategory": "Pessoas",
     "name": "Markus Knauff",
-    "url": "https://scholar.google.com/citations?view_op=search_authors&mauthors=Markus%20Knauff",
+    "url": "https://scholar.google.com/scholar?q=%22Markus+Knauff%22",
     "description": "",
     "tags": [],
     "featured": false,
@@ -2778,7 +2762,7 @@
     "category": "Medicina Baseada em Evidências",
     "subcategory": "Pessoas",
     "name": "Álvaro Nagib Atallah",
-    "url": "https://scholar.google.com/citations?view_op=search_authors&mauthors=%C3%81lvaro%20Nagib%20Atallah",
+    "url": "https://scholar.google.com/scholar?q=%22%C3%81lvaro+Nagib+Atallah%22",
     "description": "",
     "tags": [],
     "featured": false,
@@ -2788,7 +2772,7 @@
     "category": "Medicina Baseada em Evidências",
     "subcategory": "Pessoas",
     "name": "Luis Claudio Correia",
-    "url": "https://scholar.google.com/citations?view_op=search_authors&mauthors=Luis%20Claudio%20Correia",
+    "url": "https://scholar.google.com/scholar?q=%22Luis+Claudio+Correia%22",
     "description": "",
     "tags": [],
     "featured": false,
@@ -2808,7 +2792,7 @@
     "category": "Medicina Baseada em Evidências",
     "subcategory": "Pessoas",
     "name": "José Neto",
-    "url": "https://scholar.google.com/citations?view_op=search_authors&mauthors=Jos%C3%A9%20Neto",
+    "url": "https://scholar.google.com/scholar?q=%22Jos%C3%A9+Neto%22",
     "description": "",
     "tags": [],
     "featured": false,
@@ -2818,7 +2802,7 @@
     "category": "Medicina Baseada em Evidências",
     "subcategory": "Pessoas",
     "name": "Gregory Lewis",
-    "url": "https://scholar.google.com/citations?view_op=search_authors&mauthors=Gregory%20Lewis",
+    "url": "https://scholar.google.com/scholar?q=%22Gregory+Lewis%22",
     "description": "",
     "tags": [],
     "featured": false,
@@ -2878,7 +2862,7 @@
     "category": "Enfermagem Baseada em Evidências",
     "subcategory": "Pessoas",
     "name": "Bernadette Mazurek Melnyk",
-    "url": "https://scholar.google.com/citations?view_op=search_authors&mauthors=Bernadette%20Mazurek%20Melnyk",
+    "url": "https://scholar.google.com/scholar?q=%22Bernadette+Mazurek+Melnyk%22",
     "description": "",
     "tags": [],
     "featured": false,
@@ -2888,7 +2872,7 @@
     "category": "Enfermagem Baseada em Evidências",
     "subcategory": "Pessoas",
     "name": "Ellen Fineout-Overholt",
-    "url": "https://scholar.google.com/citations?view_op=search_authors&mauthors=Ellen%20Fineout-Overholt",
+    "url": "https://scholar.google.com/scholar?q=%22Ellen+Fineout-Overholt%22",
     "description": "",
     "tags": [],
     "featured": false,
@@ -2908,7 +2892,7 @@
     "category": "Enfermagem Baseada em Evidências",
     "subcategory": "Pessoas",
     "name": "Cristina Maria Galvão",
-    "url": "https://scholar.google.com/citations?view_op=search_authors&mauthors=Cristina%20Maria%20Galv%C3%A3o",
+    "url": "https://scholar.google.com/scholar?q=%22Cristina+Maria+Galv%C3%A3o%22",
     "description": "",
     "tags": [],
     "featured": false,
@@ -2978,7 +2962,7 @@
     "category": "Odontologia Baseada em Evidências",
     "subcategory": "Pessoas",
     "name": "Ian Needleman",
-    "url": "https://scholar.google.com/citations?view_op=search_authors&mauthors=Ian%20Needleman",
+    "url": "https://scholar.google.com/scholar?q=%22Ian+Needleman%22",
     "description": "",
     "tags": [],
     "featured": false,
@@ -2988,7 +2972,7 @@
     "category": "Odontologia Baseada em Evidências",
     "subcategory": "Pessoas",
     "name": "Derek Richards",
-    "url": "https://scholar.google.com/citations?view_op=search_authors&mauthors=Derek%20Richards",
+    "url": "https://scholar.google.com/scholar?q=%22Derek+Richards%22",
     "description": "",
     "tags": [],
     "featured": false,
@@ -2998,7 +2982,7 @@
     "category": "Odontologia Baseada em Evidências",
     "subcategory": "Pessoas",
     "name": "Alan Lawrence",
-    "url": "https://scholar.google.com/citations?view_op=search_authors&mauthors=Alan%20Lawrence",
+    "url": "https://scholar.google.com/scholar?q=%22Alan+Lawrence%22",
     "description": "",
     "tags": [],
     "featured": false,
@@ -3018,7 +3002,7 @@
     "category": "Odontologia Baseada em Evidências",
     "subcategory": "Pessoas",
     "name": "Jaime Aparecido Cury",
-    "url": "https://scholar.google.com/citations?view_op=search_authors&mauthors=Jaime%20Aparecido%20Cury",
+    "url": "https://scholar.google.com/scholar?q=%22Jaime+Aparecido+Cury%22",
     "description": "",
     "tags": [],
     "featured": false,
@@ -3028,7 +3012,7 @@
     "category": "Odontologia Baseada em Evidências",
     "subcategory": "Pessoas",
     "name": "Asbjørn Jokstad",
-    "url": "https://scholar.google.com/citations?view_op=search_authors&mauthors=Asbj%C3%B8rn%20Jokstad",
+    "url": "https://scholar.google.com/scholar?q=%22Asbj%C3%B8rn+Jokstad%22",
     "description": "",
     "tags": [],
     "featured": false,
@@ -3038,7 +3022,7 @@
     "category": "Odontologia Baseada em Evidências",
     "subcategory": "Pessoas",
     "name": "Luiz Rodolfo",
-    "url": "https://scholar.google.com/citations?view_op=search_authors&mauthors=Luiz%20Rodolfo",
+    "url": "https://scholar.google.com/scholar?q=%22Luiz+Rodolfo%22",
     "description": "",
     "tags": [],
     "featured": false,
@@ -3068,7 +3052,7 @@
     "category": "Fisioterapia Baseada em Evidências",
     "subcategory": "Pessoas",
     "name": "Chris Maher",
-    "url": "https://scholar.google.com/citations?view_op=search_authors&mauthors=Chris%20Maher",
+    "url": "https://scholar.google.com/scholar?q=%22Chris+Maher%22",
     "description": "",
     "tags": [],
     "featured": false,
@@ -3078,7 +3062,7 @@
     "category": "Fisioterapia Baseada em Evidências",
     "subcategory": "Pessoas",
     "name": "Rob Herbert",
-    "url": "https://scholar.google.com/citations?view_op=search_authors&mauthors=Rob%20Herbert",
+    "url": "https://scholar.google.com/scholar?q=%22Rob+Herbert%22",
     "description": "",
     "tags": [],
     "featured": false,
@@ -3088,7 +3072,7 @@
     "category": "Fisioterapia Baseada em Evidências",
     "subcategory": "Pessoas",
     "name": "Bruno Tirotti Saragiotto",
-    "url": "https://scholar.google.com/citations?view_op=search_authors&mauthors=Bruno%20Tirotti%20Saragiotto",
+    "url": "https://scholar.google.com/scholar?q=%22Bruno+Tirotti+Saragiotto%22",
     "description": "",
     "tags": [],
     "featured": false,
@@ -3098,7 +3082,7 @@
     "category": "Fisioterapia Baseada em Evidências",
     "subcategory": "Pessoas",
     "name": "Lucíola da Cunha Menezes Costa",
-    "url": "https://scholar.google.com/citations?view_op=search_authors&mauthors=Luc%C3%ADola%20da%20Cunha%20Menezes%20Costa",
+    "url": "https://scholar.google.com/scholar?q=%22Luc%C3%ADola+da+Cunha+Menezes+Costa%22",
     "description": "",
     "tags": [],
     "featured": false,
@@ -3108,7 +3092,7 @@
     "category": "Fisioterapia Baseada em Evidências",
     "subcategory": "Pessoas",
     "name": "Leonardo Oliveira Pena Costa",
-    "url": "https://scholar.google.com/citations?view_op=search_authors&mauthors=Leonardo%20Oliveira%20Pena%20Costa",
+    "url": "https://scholar.google.com/scholar?q=%22Leonardo+Oliveira+Pena+Costa%22",
     "description": "",
     "tags": [],
     "featured": false,
@@ -3118,7 +3102,7 @@
     "category": "Fisioterapia Baseada em Evidências",
     "subcategory": "Pessoas",
     "name": "Tiê Parma Yamato",
-    "url": "https://scholar.google.com/citations?view_op=search_authors&mauthors=Ti%C3%AA%20Parma%20Yamato",
+    "url": "https://scholar.google.com/scholar?q=%22Ti%C3%AA+Parma+Yamato%22",
     "description": "",
     "tags": [],
     "featured": false,
@@ -3158,7 +3142,7 @@
     "category": "Veterinária Baseada em Evidências",
     "subcategory": "Pessoas",
     "name": "Peter Cockcroft",
-    "url": "https://scholar.google.com/citations?view_op=search_authors&mauthors=Peter%20Cockcroft",
+    "url": "https://scholar.google.com/scholar?q=%22Peter+Cockcroft%22",
     "description": "",
     "tags": [],
     "featured": false,
@@ -3168,7 +3152,7 @@
     "category": "Veterinária Baseada em Evidências",
     "subcategory": "Pessoas",
     "name": "Mark Holmes",
-    "url": "https://scholar.google.com/citations?view_op=search_authors&mauthors=Mark%20Holmes",
+    "url": "https://scholar.google.com/scholar?q=%22Mark+Holmes%22",
     "description": "",
     "tags": [],
     "featured": false,
@@ -3178,7 +3162,7 @@
     "category": "Veterinária Baseada em Evidências",
     "subcategory": "Pessoas",
     "name": "Rachel Dean",
-    "url": "https://scholar.google.com/citations?view_op=search_authors&mauthors=Rachel%20Dean",
+    "url": "https://scholar.google.com/scholar?q=%22Rachel+Dean%22",
     "description": "",
     "tags": [],
     "featured": false,
@@ -3188,7 +3172,7 @@
     "category": "Veterinária Baseada em Evidências",
     "subcategory": "Pessoas",
     "name": "Alexandre Daniel",
-    "url": "https://scholar.google.com/citations?view_op=search_authors&mauthors=Alexandre%20Daniel",
+    "url": "https://scholar.google.com/scholar?q=%22Alexandre+Daniel%22",
     "description": "",
     "tags": [],
     "featured": false,
@@ -3198,7 +3182,7 @@
     "category": "Veterinária Baseada em Evidências",
     "subcategory": "Pessoas",
     "name": "Renato Silvano Pulz",
-    "url": "https://scholar.google.com/citations?view_op=search_authors&mauthors=Renato%20Silvano%20Pulz",
+    "url": "https://scholar.google.com/scholar?q=%22Renato+Silvano+Pulz%22",
     "description": "",
     "tags": [],
     "featured": false,
@@ -3208,7 +3192,7 @@
     "category": "Veterinária Baseada em Evidências",
     "subcategory": "Pessoas",
     "name": "Siobhan Mullan",
-    "url": "https://scholar.google.com/citations?view_op=search_authors&mauthors=Siobhan%20Mullan",
+    "url": "https://scholar.google.com/scholar?q=%22Siobhan+Mullan%22",
     "description": "",
     "tags": [],
     "featured": false,
@@ -3218,7 +3202,7 @@
     "category": "Veterinária Baseada em Evidências",
     "subcategory": "Pessoas",
     "name": "Anne Fawcett",
-    "url": "https://scholar.google.com/citations?view_op=search_authors&mauthors=Anne%20Fawcett",
+    "url": "https://scholar.google.com/scholar?q=%22Anne+Fawcett%22",
     "description": "",
     "tags": [],
     "featured": false,
@@ -3228,7 +3212,7 @@
     "category": "Veterinária Baseada em Evidências",
     "subcategory": "Pessoas",
     "name": "Barry Kipperman",
-    "url": "https://scholar.google.com/citations?view_op=search_authors&mauthors=Barry%20Kipperman",
+    "url": "https://scholar.google.com/scholar?q=%22Barry+Kipperman%22",
     "description": "",
     "tags": [],
     "featured": false,
@@ -3238,7 +3222,7 @@
     "category": "Veterinária Baseada em Evidências",
     "subcategory": "Pessoas",
     "name": "Maira Rezende Formenton",
-    "url": "https://scholar.google.com/citations?view_op=search_authors&mauthors=Maira%20Rezende%20Formenton",
+    "url": "https://scholar.google.com/scholar?q=%22Maira+Rezende+Formenton%22",
     "description": "",
     "tags": [],
     "featured": false,
@@ -3248,7 +3232,7 @@
     "category": "Veterinária Baseada em Evidências",
     "subcategory": "Pessoas",
     "name": "Isabelle Tancioni",
-    "url": "https://scholar.google.com/citations?view_op=search_authors&mauthors=Isabelle%20Tancioni",
+    "url": "https://scholar.google.com/scholar?q=%22Isabelle+Tancioni%22",
     "description": "",
     "tags": [],
     "featured": false,
@@ -3378,7 +3362,7 @@
     "category": "Nutrição Baseada em Evidências",
     "subcategory": "Pessoas",
     "name": "Eric Slywitch",
-    "url": "https://scholar.google.com/citations?view_op=search_authors&mauthors=Eric%20Slywitch",
+    "url": "https://scholar.google.com/scholar?q=%22Eric+Slywitch%22",
     "description": "",
     "tags": [],
     "featured": false,
@@ -3498,7 +3482,7 @@
     "category": "Ética Baseada em Evidências",
     "subcategory": "Organizações",
     "name": "Jeremy Coller Centre for Animal Sentience",
-    "url": "https://www.lse.ac.uk/animal-sentience",
+    "url": "https://www.lse.ac.uk/sentience",
     "description": "",
     "tags": [],
     "featured": false,
@@ -3558,7 +3542,7 @@
     "category": "Ética Baseada em Evidências",
     "subcategory": "Pessoas",
     "name": "Ronald Anthony Hope",
-    "url": "https://scholar.google.com/citations?view_op=search_authors&mauthors=Ronald%20Anthony%20Hope",
+    "url": "https://scholar.google.com/scholar?q=%22Ronald+Anthony+Hope%22",
     "description": "",
     "tags": [],
     "featured": false,
@@ -3568,7 +3552,7 @@
     "category": "Ética Baseada em Evidências",
     "subcategory": "Pessoas",
     "name": "John McMillan",
-    "url": "https://scholar.google.com/citations?view_op=search_authors&mauthors=John%20McMillan",
+    "url": "https://scholar.google.com/scholar?q=%22John+McMillan%22",
     "description": "",
     "tags": [],
     "featured": false,
@@ -3588,7 +3572,7 @@
     "category": "Ética Baseada em Evidências",
     "subcategory": "Pessoas",
     "name": "Vitor Douglas de Andrade",
-    "url": "https://scholar.google.com/citations?view_op=search_authors&mauthors=Vitor%20Douglas%20de%20Andrade",
+    "url": "https://scholar.google.com/scholar?q=%22Vitor+Douglas+de+Andrade%22",
     "description": "",
     "tags": [],
     "featured": false,
@@ -3728,7 +3712,7 @@
     "category": "Ética Baseada em Evidências",
     "subcategory": "Pessoas",
     "name": "Krister Bykvist",
-    "url": "https://scholar.google.com/citations?view_op=search_authors&mauthors=Krister%20Bykvist",
+    "url": "https://scholar.google.com/scholar?q=%22Krister+Bykvist%22",
     "description": "",
     "tags": [],
     "featured": false,
@@ -3768,7 +3752,7 @@
     "category": "Ética Baseada em Evidências",
     "subcategory": "Pessoas",
     "name": "Persis Eskander",
-    "url": "https://scholar.google.com/citations?view_op=search_authors&mauthors=Persis%20Eskander",
+    "url": "https://scholar.google.com/scholar?q=%22Persis+Eskander%22",
     "description": "",
     "tags": [],
     "featured": false,
@@ -3788,7 +3772,7 @@
     "category": "Ética Baseada em Evidências",
     "subcategory": "Pessoas",
     "name": "Jacob Barrett",
-    "url": "https://scholar.google.com/citations?view_op=search_authors&mauthors=Jacob%20Barrett",
+    "url": "https://scholar.google.com/scholar?q=%22Jacob+Barrett%22",
     "description": "",
     "tags": [],
     "featured": false,
@@ -3798,7 +3782,7 @@
     "category": "Ética Baseada em Evidências",
     "subcategory": "Pessoas",
     "name": "Karri Heikkinen",
-    "url": "https://scholar.google.com/citations?view_op=search_authors&mauthors=Karri%20Heikkinen",
+    "url": "https://scholar.google.com/scholar?q=%22Karri+Heikkinen%22",
     "description": "",
     "tags": [],
     "featured": false,
@@ -3808,7 +3792,7 @@
     "category": "Ética Baseada em Evidências",
     "subcategory": "Pessoas",
     "name": "Toby Newberry",
-    "url": "https://scholar.google.com/citations?view_op=search_authors&mauthors=Toby%20Newberry",
+    "url": "https://scholar.google.com/scholar?q=%22Toby+Newberry%22",
     "description": "",
     "tags": [],
     "featured": false,
@@ -3956,6 +3940,16 @@
   },
   {
     "category": "Altruísmo eficaz",
+    "subcategory": "Organizações",
+    "name": "EA Forum",
+    "url": "https://forum.effectivealtruism.org/",
+    "description": "",
+    "tags": [],
+    "featured": false,
+    "ended": false
+  },
+  {
+    "category": "Altruísmo eficaz",
     "subcategory": "Pessoas",
     "name": "William MacAskill",
     "url": "https://en.wikipedia.org/wiki/William_MacAskill",
@@ -3998,7 +3992,7 @@
     "category": "Altruísmo eficaz",
     "subcategory": "Pessoas",
     "name": "Nick Beckstead",
-    "url": "https://scholar.google.com/citations?view_op=search_authors&mauthors=Nick%20Beckstead",
+    "url": "https://scholar.google.com/scholar?q=%22Nick+Beckstead%22",
     "description": "",
     "tags": [],
     "featured": false,
@@ -4038,7 +4032,7 @@
     "category": "Altruísmo eficaz",
     "subcategory": "Pessoas",
     "name": "Magnus Vinding",
-    "url": "https://scholar.google.com/citations?view_op=search_authors&mauthors=Magnus%20Vinding",
+    "url": "https://scholar.google.com/scholar?q=%22Magnus+Vinding%22",
     "description": "",
     "tags": [],
     "featured": false,
@@ -4048,7 +4042,7 @@
     "category": "Altruísmo eficaz",
     "subcategory": "Pessoas",
     "name": "Tobias Baumann",
-    "url": "https://scholar.google.com/citations?view_op=search_authors&mauthors=Tobias%20Baumann",
+    "url": "https://scholar.google.com/scholar?q=%22Tobias+Baumann%22",
     "description": "",
     "tags": [],
     "featured": false,
@@ -4288,7 +4282,7 @@
     "category": "Filosofia analítica",
     "subcategory": "Pessoas",
     "name": "Damian Fernandez-Beanato",
-    "url": "https://scholar.google.com/citations?view_op=search_authors&mauthors=Damian%20Fernandez-Beanato",
+    "url": "https://scholar.google.com/scholar?q=%22Damian+Fernandez-Beanato%22",
     "description": "",
     "tags": [],
     "featured": false,
@@ -4818,7 +4812,7 @@
     "category": "Divulgação científica",
     "subcategory": "Pessoas (Brasil)",
     "name": "Herton Escobar",
-    "url": "http://hertonescobar.com.br",
+    "url": "https://hertonescobar.com.br",
     "description": "",
     "tags": [],
     "featured": false,
@@ -4968,7 +4962,7 @@
     "category": "Divulgação científica",
     "subcategory": "Pessoas (Brasil)",
     "name": "Ruth Helena Bellinghini",
-    "url": "https://scholar.google.com/citations?view_op=search_authors&mauthors=Ruth%20Helena%20Bellinghini",
+    "url": "https://scholar.google.com/scholar?q=%22Ruth+Helena+Bellinghini%22",
     "description": "",
     "tags": [],
     "featured": false,
@@ -4978,7 +4972,7 @@
     "category": "Divulgação científica",
     "subcategory": "Pessoas (Brasil)",
     "name": "Marcelo Takeshi Yamashita",
-    "url": "https://scholar.google.com/citations?view_op=search_authors&mauthors=Marcelo%20Takeshi%20Yamashita",
+    "url": "https://scholar.google.com/scholar?q=%22Marcelo+Takeshi+Yamashita%22",
     "description": "",
     "tags": [],
     "featured": false,
@@ -4988,7 +4982,7 @@
     "category": "Divulgação científica",
     "subcategory": "Pessoas (Brasil)",
     "name": "Daniel Dahis",
-    "url": "https://scholar.google.com/citations?view_op=search_authors&mauthors=Daniel%20Dahis",
+    "url": "https://scholar.google.com/scholar?q=%22Daniel+Dahis%22",
     "description": "",
     "tags": [],
     "featured": false,
@@ -5078,7 +5072,7 @@
     "category": "Divulgação filosófica",
     "subcategory": "Projetos",
     "name": "Wireless Philosophy",
-    "url": "http://www.wi-phi.com",
+    "url": "https://www.wi-phi.com",
     "description": "",
     "tags": [],
     "featured": false,
@@ -5308,7 +5302,7 @@
     "category": "Divulgação filosófica",
     "subcategory": "Pessoas",
     "name": "David Bourget",
-    "url": "https://scholar.google.com/citations?view_op=search_authors&mauthors=David%20Bourget",
+    "url": "https://scholar.google.com/scholar?q=%22David+Bourget%22",
     "description": "",
     "tags": [],
     "featured": false,
@@ -5795,6 +5789,46 @@
     "ended": false
   },
   {
+    "category": "Ciência e ceticismo",
+    "subcategory": "Checagem de fatos",
+    "name": "Snopes",
+    "url": "https://www.snopes.com/",
+    "description": "",
+    "tags": [],
+    "featured": false,
+    "ended": false
+  },
+  {
+    "category": "Ciência e ceticismo",
+    "subcategory": "Checagem de fatos",
+    "name": "Full Fact",
+    "url": "https://fullfact.org/",
+    "description": "",
+    "tags": [],
+    "featured": false,
+    "ended": false
+  },
+  {
+    "category": "Ciência e ceticismo",
+    "subcategory": "Checagem de fatos",
+    "name": "Agência Lupa",
+    "url": "https://www.agencialupa.org/",
+    "description": "",
+    "tags": [],
+    "featured": false,
+    "ended": false
+  },
+  {
+    "category": "Ciência e ceticismo",
+    "subcategory": "Checagem de fatos",
+    "name": "Aos Fatos",
+    "url": "https://www.aosfatos.org/",
+    "description": "",
+    "tags": [],
+    "featured": false,
+    "ended": false
+  },
+  {
     "category": "Podcasts",
     "subcategory": "Internacionais",
     "name": "Rationally Speaking",
@@ -5938,5 +5972,6 @@
 </script><script>window.DEFAULT_CATEGORY="__ALL__";</script><script defer="" src="script.js"></script></div>
 <!-- PWA Install Button -->
 <button class="pwa-install" hidden="" id="btnInstall">Instalar app</button>
+<script defer="defer" src="./sw-register.js"></script>
 </body>
 </html>
